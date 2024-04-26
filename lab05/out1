@@ -1,0 +1,391 @@
+	Assembler Directive: :.section	__TEXT,__text,regular,pure_instructions
+
+	Assembler Directive: :.build_version macos, 14, 0	sdk_version 14, 4
+
+	Assembler Directive: :.globl	_main                           ; -- Begin function main
+
+	Assembler Directive: :.p2align	2
+
+_mainDELIMITER :
+                                  DELIMITER ;
+ @main
+	Assembler Directive: :.cfi_startproc
+
+DELIMITER ;
+ %bbAssembler Directive: :.0:
+
+	stp	x28DELIMITER ,
+ x27DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #-32Token RIGHTPAR ]
+!           DELIMITER ;
+ 16-byte Folded Spill
+	Assembler Directive: :.cfi_def_cfa_offset 32
+
+	stp	x29DELIMITER ,
+ x30DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+             DELIMITER ;
+ 16-byte Folded Spill
+	add	x29DELIMITER ,
+ spDELIMITER ,
+ #16
+	Assembler Directive: :.cfi_def_cfa w29, 16
+
+	Assembler Directive: :.cfi_offset w30, -8
+
+	Assembler Directive: :.cfi_offset w29, -16
+
+	Assembler Directive: :.cfi_offset w27, -24
+
+	Assembler Directive: :.cfi_offset w28, -32
+
+	sub	spDELIMITER ,
+ spDELIMITER ,
+ #4032
+	adrp	x8DELIMITER ,
+ Function Call ___stack_chk_guard@GOTPAGE
+
+	ldr	x8DELIMITER ,
+ Token LEFTPAR [
+x8DELIMITER ,
+ Function Call ___stack_chk_guard@GOTPAGEOFF]
+
+	ldr	x8DELIMITER ,
+ Token LEFTPAR [
+x8Token RIGHTPAR ]
+
+	stur	x8DELIMITER ,
+ Token LEFTPAR [
+x29DELIMITER ,
+ #-24Token RIGHTPAR ]
+
+	str	wzrDELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #20Token RIGHTPAR ]
+
+	mov	w8DELIMITER ,
+ #10000
+	str	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #8Token RIGHTPAR ]
+
+	str	wzrDELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	b	LBB0_1
+LBB0_1DELIMITER :
+                                 DELIMITER ;
+ =>This Inner Loop HeaderDELIMITER :
+ Depth=1
+	ldr	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	subs	w8DELIMITER ,
+ w8DELIMITER ,
+ #100
+	cset	w8DELIMITER ,
+ ge
+	tbnz	w8DELIMITER ,
+ #0DELIMITER ,
+ LBB0_4
+	b	LBB0_2
+LBB0_2DELIMITER :
+                                 DELIMITER ;
+   in LoopDELIMITER :
+ Header=BB0_1 Depth=1
+	ldr	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	ldrsw	x10DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	add	x9DELIMITER ,
+ spDELIMITER ,
+ #24
+	str	w8DELIMITER ,
+ Token LEFTPAR [
+x9DELIMITER ,
+ x10DELIMITER ,
+ lsl #2Token RIGHTPAR ]
+
+	b	LBB0_3
+LBB0_3DELIMITER :
+                                 DELIMITER ;
+   in LoopDELIMITER :
+ Header=BB0_1 Depth=1
+	ldr	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	add	w8DELIMITER ,
+ w8DELIMITER ,
+ #1
+	str	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	b	LBB0_1
+LBB0_4DELIMITER :
+
+	str	wzrDELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	b	LBB0_5
+LBB0_5DELIMITER :
+                                 DELIMITER ;
+ =>This Loop HeaderDELIMITER :
+ Depth=1
+                                        DELIMITER ;
+     Child Loop BB0_7 Depth 2
+	ldr	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	subs	w8DELIMITER ,
+ w8DELIMITER ,
+ #10
+	cset	w8DELIMITER ,
+ ge
+	tbnz	w8DELIMITER ,
+ #0DELIMITER ,
+ LBB0_12
+	b	LBB0_6
+LBB0_6DELIMITER :
+                                 DELIMITER ;
+   in LoopDELIMITER :
+ Header=BB0_5 Depth=1
+	str	wzrDELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #12Token RIGHTPAR ]
+
+	b	LBB0_7
+LBB0_7DELIMITER :
+                                 DELIMITER ;
+   Parent Loop BB0_5 Depth=1
+                                        DELIMITER ;
+ =>  This Inner Loop HeaderDELIMITER :
+ Depth=2
+	ldr	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #12Token RIGHTPAR ]
+
+	ldr	w9DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	ldr	w10DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	mul	w9DELIMITER ,
+ w9DELIMITER ,
+ w10
+	subs	w8DELIMITER ,
+ w8DELIMITER ,
+ w9
+	cset	w8DELIMITER ,
+ ge
+	tbnz	w8DELIMITER ,
+ #0DELIMITER ,
+ LBB0_10
+	b	LBB0_8
+LBB0_8DELIMITER :
+                                 DELIMITER ;
+   in LoopDELIMITER :
+ Header=BB0_7 Depth=2
+	ldrsw	x8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	add	x9DELIMITER ,
+ spDELIMITER ,
+ #24
+	ldr	w8DELIMITER ,
+ Token LEFTPAR [
+x9DELIMITER ,
+ x8DELIMITER ,
+ lsl #2Token RIGHTPAR ]
+
+	ldrsw	x10DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #12Token RIGHTPAR ]
+
+	ldr	w10DELIMITER ,
+ Token LEFTPAR [
+x9DELIMITER ,
+ x10DELIMITER ,
+ lsl #2Token RIGHTPAR ]
+
+	mul	w8DELIMITER ,
+ w8DELIMITER ,
+ w10
+	ldrsw	x10DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	str	w8DELIMITER ,
+ Token LEFTPAR [
+x9DELIMITER ,
+ x10DELIMITER ,
+ lsl #2Token RIGHTPAR ]
+
+	b	LBB0_9
+LBB0_9DELIMITER :
+                                 DELIMITER ;
+   in LoopDELIMITER :
+ Header=BB0_7 Depth=2
+	ldr	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #12Token RIGHTPAR ]
+
+	add	w8DELIMITER ,
+ w8DELIMITER ,
+ #1
+	str	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #12Token RIGHTPAR ]
+
+	b	LBB0_7
+LBB0_10DELIMITER :
+                                DELIMITER ;
+   in LoopDELIMITER :
+ Header=BB0_5 Depth=1
+	b	LBB0_11
+LBB0_11DELIMITER :
+                                DELIMITER ;
+   in LoopDELIMITER :
+ Header=BB0_5 Depth=1
+	ldr	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	add	w8DELIMITER ,
+ w8DELIMITER ,
+ #1
+	str	w8DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+
+	b	LBB0_5
+LBB0_12DELIMITER :
+
+	ldr	w9DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #8Token RIGHTPAR ]
+
+                                        DELIMITER ;
+ implicit-defDELIMITER :
+ Immediate Operand $
+x8
+	mov	x8DELIMITER ,
+ x9
+	mov	x9DELIMITER ,
+ sp
+	str	x8DELIMITER ,
+ Token LEFTPAR [
+x9Token RIGHTPAR ]
+
+	adrp	x0DELIMITER ,
+ l_Assembler Directive: :.str@PAGE
+
+	add	x0DELIMITER ,
+ x0DELIMITER ,
+ l_Assembler Directive: :.str@PAGEOFF
+
+	bl	_printf
+	ldur	x9DELIMITER ,
+ Token LEFTPAR [
+x29DELIMITER ,
+ #-24Token RIGHTPAR ]
+
+	adrp	x8DELIMITER ,
+ Function Call ___stack_chk_guard@GOTPAGE
+
+	ldr	x8DELIMITER ,
+ Token LEFTPAR [
+x8DELIMITER ,
+ Function Call ___stack_chk_guard@GOTPAGEOFF]
+
+	ldr	x8DELIMITER ,
+ Token LEFTPAR [
+x8Token RIGHTPAR ]
+
+	subs	x8DELIMITER ,
+ x8DELIMITER ,
+ x9
+	cset	w8DELIMITER ,
+ eq
+	tbnz	w8DELIMITER ,
+ #0DELIMITER ,
+ LBB0_14
+	b	LBB0_13
+LBB0_13DELIMITER :
+
+	bl	Function Call ___stack_chk_fail
+
+LBB0_14DELIMITER :
+
+	mov	w0DELIMITER ,
+ #0
+	add	spDELIMITER ,
+ spDELIMITER ,
+ #4032
+	ldp	x29DELIMITER ,
+ x30DELIMITER ,
+ Token LEFTPAR [
+spDELIMITER ,
+ #16Token RIGHTPAR ]
+             DELIMITER ;
+ 16-byte Folded Reload
+	ldp	x28DELIMITER ,
+ x27DELIMITER ,
+ Token LEFTPAR [
+spToken RIGHTPAR ]
+DELIMITER ,
+ #32             DELIMITER ;
+ 16-byte Folded Reload
+	ret
+	Assembler Directive: :.cfi_endproc
+
+                                        DELIMITER ;
+ -- End function
+	Assembler Directive: :.section	__TEXT,__cstring,cstring_literals
+
+l_Assembler Directive: :.str:                                 ; @.str
+
+	Assembler Directive: :.asciz	"sum: %d\n"
+
+
+Assembler Directive: :.subsections_via_symbols
+

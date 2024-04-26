@@ -1,0 +1,11 @@
+Rule 4 : type -> INT used
+Rule 8 : list -> ID Q used
+Rule 7 : list -> list , ID Q used
+Rule 7 : list -> list , ID Q used
+Rule 3 : decl -> type list; used
+Rule 2 : declist -> Null used 
+Rule 1 : declist -> decl declist used
+ No of declaration statements : 1 
+ No of Integer datatypes : 1 
+ No of Float datatypes : 0 
+ No of Character datatypes : 0 

@@ -1,0 +1,36 @@
+keyword found
+
+bitwise op found
+bitwise op found
+number obtained
+
+Octal number found
+
+Hexadecimal number found
+
+
+Decimal number found
+
+keyword found
+ identifier found
+
+Decimal number found
+
+number obtained
+
+Delimiter found 
+
+Delimiter found 
+Number of Hexadecimal tokens found: 1 
+Number of Identifiers found: 1 
+Number of Octal tokens found: 1 
+Number of Integer tokens found: 2 
+Number of Decimal tokens found: 2 
+Number of Multiplicative tokens found: 0 
+Number of Arithmetic tokens found: 0 
+Number of Bitwise Shift tokens found: 2 
+Number of Relational tokens found: 0 
+Number of Assignment tokens found: 0 
+Number of Left Parenthesis found: 0 
+Number of Right Parenthesis found: 0 
+Number of Delimiter tokens found: 2 

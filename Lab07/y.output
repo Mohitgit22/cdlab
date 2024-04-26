@@ -1,0 +1,145 @@
+   0  $accept : EL $end
+
+   1  EL : EL E
+   2     |
+
+   3  E : E '+' T
+   4    | T
+
+   5  T : T '*' F
+   6    | F
+
+   7  F : NUM
+   8    |
+
+state 0
+	$accept : . EL $end  (0)
+	EL : .  (2)
+
+	.  reduce 2
+
+	EL  goto 1
+
+
+1: shift/reduce conflict (shift 2, reduce 8) on NUM
+state 1
+	$accept : EL . $end  (0)
+	EL : EL . E  (1)
+	F : .  (8)
+
+	$end  accept
+	NUM  shift 2
+	$end  reduce 8
+	'*'  reduce 8
+	'+'  reduce 8
+
+	E  goto 3
+	T  goto 4
+	F  goto 5
+
+
+state 2
+	F : NUM .  (7)
+
+	.  reduce 7
+
+
+3: shift/reduce conflict (shift 6, reduce 1) on '+'
+state 3
+	EL : EL E .  (1)
+	E : E . '+' T  (3)
+
+	'+'  shift 6
+	$end  reduce 1
+	NUM  reduce 1
+	'*'  reduce 1
+
+
+4: shift/reduce conflict (shift 7, reduce 4) on '*'
+state 4
+	E : T .  (4)
+	T : T . '*' F  (5)
+
+	'*'  shift 7
+	$end  reduce 4
+	NUM  reduce 4
+	'+'  reduce 4
+
+
+state 5
+	T : F .  (6)
+
+	.  reduce 6
+
+
+6: shift/reduce conflict (shift 2, reduce 8) on NUM
+state 6
+	E : E '+' . T  (3)
+	F : .  (8)
+
+	NUM  shift 2
+	$end  reduce 8
+	'*'  reduce 8
+	'+'  reduce 8
+
+	T  goto 8
+	F  goto 5
+
+
+7: shift/reduce conflict (shift 2, reduce 8) on NUM
+state 7
+	T : T '*' . F  (5)
+	F : .  (8)
+
+	NUM  shift 2
+	$end  reduce 8
+	'*'  reduce 8
+	'+'  reduce 8
+
+	F  goto 9
+
+
+8: shift/reduce conflict (shift 7, reduce 3) on '*'
+state 8
+	E : E '+' T .  (3)
+	T : T . '*' F  (5)
+
+	'*'  shift 7
+	$end  reduce 3
+	NUM  reduce 3
+	'+'  reduce 3
+
+
+state 9
+	T : T '*' F .  (5)
+
+	.  reduce 5
+
+
+State 1 contains 1 shift/reduce conflict.
+State 3 contains 1 shift/reduce conflict.
+State 4 contains 1 shift/reduce conflict.
+State 6 contains 1 shift/reduce conflict.
+State 7 contains 1 shift/reduce conflict.
+State 8 contains 1 shift/reduce conflict.
+
+
+9 terminals, 5 nonterminals
+9 grammar rules, 10 states
+
+grammar parser grammar
+symbol# value# symbol
+     0      0  $end
+     1    256  error
+     2    257  CHAR
+     3    258  INT
+     4    259  FLOAT
+     5    260  ID
+     6    261  NUM
+     7     42  '*'
+     8     43  '+'
+     9    262  $accept
+    10    263  EL
+    11    264  E
+    12    265  T
+    13    266  F
