@@ -1,0 +1,224 @@
+Terminals unused in grammar
+
+    NUM
+    '*'
+
+
+Grammar
+
+    0 $accept: declist $end
+
+    1 declist: decl declist
+    2        | ε
+
+    3 decl: type list ';'
+
+    4 type: INT
+    5     | FLOAT
+    6     | CHAR
+
+    7 list: list ',' ID a
+    8     | ID a
+
+    9 a: a '[' ID ']'
+   10  | ε
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    '*' (42)
+    ',' (44) 7
+    ';' (59) 3
+    '[' (91) 9
+    ']' (93) 9
+    error (256)
+    CHAR (258) 6
+    INT (259) 4
+    FLOAT (260) 5
+    ID (261) 7 8 9
+    NUM (262)
+
+
+Nonterminals, with rules where they appear
+
+    $accept (13)
+        on left: 0
+    declist (14)
+        on left: 1 2
+        on right: 0 1
+    decl (15)
+        on left: 3
+        on right: 1
+    type (16)
+        on left: 4 5 6
+        on right: 3
+    list (17)
+        on left: 7 8
+        on right: 3 7
+    a (18)
+        on left: 9 10
+        on right: 7 8 9
+
+
+State 0
+
+    0 $accept: • declist $end
+
+    CHAR   shift, and go to state 1
+    INT    shift, and go to state 2
+    FLOAT  shift, and go to state 3
+
+    $default  reduce using rule 2 (declist)
+
+    declist  go to state 4
+    decl     go to state 5
+    type     go to state 6
+
+
+State 1
+
+    6 type: CHAR •
+
+    $default  reduce using rule 6 (type)
+
+
+State 2
+
+    4 type: INT •
+
+    $default  reduce using rule 4 (type)
+
+
+State 3
+
+    5 type: FLOAT •
+
+    $default  reduce using rule 5 (type)
+
+
+State 4
+
+    0 $accept: declist • $end
+
+    $end  shift, and go to state 7
+
+
+State 5
+
+    1 declist: decl • declist
+
+    CHAR   shift, and go to state 1
+    INT    shift, and go to state 2
+    FLOAT  shift, and go to state 3
+
+    $default  reduce using rule 2 (declist)
+
+    declist  go to state 8
+    decl     go to state 5
+    type     go to state 6
+
+
+State 6
+
+    3 decl: type • list ';'
+
+    ID  shift, and go to state 9
+
+    list  go to state 10
+
+
+State 7
+
+    0 $accept: declist $end •
+
+    $default  accept
+
+
+State 8
+
+    1 declist: decl declist •
+
+    $default  reduce using rule 1 (declist)
+
+
+State 9
+
+    8 list: ID • a
+
+    $default  reduce using rule 10 (a)
+
+    a  go to state 11
+
+
+State 10
+
+    3 decl: type list • ';'
+    7 list: list • ',' ID a
+
+    ';'  shift, and go to state 12
+    ','  shift, and go to state 13
+
+
+State 11
+
+    8 list: ID a •
+    9 a: a • '[' ID ']'
+
+    '['  shift, and go to state 14
+
+    $default  reduce using rule 8 (list)
+
+
+State 12
+
+    3 decl: type list ';' •
+
+    $default  reduce using rule 3 (decl)
+
+
+State 13
+
+    7 list: list ',' • ID a
+
+    ID  shift, and go to state 15
+
+
+State 14
+
+    9 a: a '[' • ID ']'
+
+    ID  shift, and go to state 16
+
+
+State 15
+
+    7 list: list ',' ID • a
+
+    $default  reduce using rule 10 (a)
+
+    a  go to state 17
+
+
+State 16
+
+    9 a: a '[' ID • ']'
+
+    ']'  shift, and go to state 18
+
+
+State 17
+
+    7 list: list ',' ID a •
+    9 a: a • '[' ID ']'
+
+    '['  shift, and go to state 14
+
+    $default  reduce using rule 7 (list)
+
+
+State 18
+
+    9 a: a '[' ID ']' •
+
+    $default  reduce using rule 9 (a)

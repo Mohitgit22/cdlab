@@ -9,7 +9,8 @@
 
 /* YACC Declarations */
 
-%token CHAR INT FLOAT ID NUM 
+%token CHAR INT FLOAT ID NUM
+ 
 %right  '*' 
 
      
