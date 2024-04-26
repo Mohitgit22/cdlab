@@ -74,7 +74,7 @@ int main() {
 //lab --- 4
 %{
     #include<stdio.h>
-    int keyword=0,hex=0, id=0, oct=0, normalint=0, dec=0, mult=0, arth=0, bits=0, rel=0, assnmt=0, lp=0, rp=0, del=0;
+    int keyword=0,hex=0, id=0, oct=0, normalint=0, dec=0, mult=0, arth=0, bits=0, rel=0, assnmt=0, lp=0, rp=0, del=0, comment = 0;
 %}
 
 %option noyywrap
@@ -89,6 +89,8 @@ int|if|else|return|float|char|const|static|while|do|void  {printf("keyword found
 
 0{DO}+ {printf("Octal number found\n"); oct++;return 1;}
 0x{HX}+ {printf("Hexadecimal number found\n"); hex++;return 1;}
+\/\*([^*]|\*+[^*/])*\*+\/ {printf("Token Comment : Lexeme: %s \n",yytext);comment++;}
+\/\/.*  {printf("Token Comment : Lexeme: %s \n",yytext);comment++;}
  
 "*"|"/"|"%" {printf("multiplicative op found");mult++; return 1;}
 "+"|"-" {printf("arithmetic op found");arth++; return 1;}
