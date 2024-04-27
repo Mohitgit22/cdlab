@@ -40,7 +40,9 @@ int|if|else|return|float|char|const|static|while|do|void  {printf("keyword found
 "+"|"-" {printf("arithmetic op found");arth++; return 1;}
 "<<"|">>" {printf("bitwise op found");bits++; return 1;}
 
-
+[0-9]+"."[0-9]+{printf("token Real: lexeme: %s\n", yytext); real++;}
+[0-9]+[eE][+-]?[0-9]+ {printf("token exponent: lexeme: %s\n", yytext); real++;}
+[+-]?[0-9]*\.?[0-9]+([eE][+-]?[0-9]+)? {printf("token exponent: lexeme: %s\n", yytext); real++;}
 
 {L}({L}|{D})*  {printf("identifier found\n"); id++;return 1;}
 {D}+ {printf("number obtained\n");normalint++; return 1;}

@@ -12,4 +12,4 @@ ws [ \t\n]
 "*" {return '*';}
 {digit}+ {yylval = atoi(yytext);return NUM;}
 %%
-int yywrap(void){return 1;}?
+int yywrap(void){return 1;}
